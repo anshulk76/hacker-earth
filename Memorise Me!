@@ -1,0 +1,27 @@
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+ 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());   
+        int[] ar = new int[1001];
+        String[] str = br.readLine().split(" ");
+        for(int i=0;i<n;i++){
+            ar[Integer.parseInt(str[i])] += 1 ;
+        }
+        int q = Integer.parseInt(br.readLine());
+        while(q-->0) {
+            int b = Integer.parseInt(br.readLine());
+            if(ar[b]>0){
+                System.out.println(ar[b]);
+            }
+        	else{
+        	    System.out.println("NOT PRESENT");
+        	}
+        }
+    }
+}
