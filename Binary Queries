@@ -1,0 +1,38 @@
+
+//imports for BufferedReader
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str1 = br.readLine().split(" ");
+        int n = Integer.parseInt(str1[0]);  
+        int q = Integer.parseInt(str1[1]);
+        int[] ar = new int[n];
+        String[] str2 = br.readLine().split(" ");
+        
+        for(int i=0;i<n;i++){
+            ar[i] = Integer.parseInt(str2[i]);
+        }
+        while(q-->0) {
+        	String[] str3 = br.readLine().split(" ");
+        	if(str3[0].equals("0")) {
+        		int a = Integer.parseInt(str3[2])-1;
+        		if(ar[a] == 1) {
+        			System.out.println("ODD");
+        		}else {
+        			System.out.println("EVEN");
+        		}
+        	}
+        	else {
+        		int b = Integer.parseInt(str3[1])-1;
+        		if(ar[b] == 0) {
+        			ar[b] = 1;
+        		}else {
+        			ar[b] = 0;
+        		}
+        	}
+         }
+    }
+}
